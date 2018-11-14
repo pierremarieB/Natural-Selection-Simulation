@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project TTNY">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="/Users/pierre-marie/Documents/L3 Informatique/POO/Workspace"/>
+    <property name="dir.jarfile" value="/Users/pierre-marie/Documents/L3 Informatique/Stage/stage-gan-ttny/TTNY"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/ganTTNY.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="client.Main"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.jarfile}/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/library/hsqldb.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/library/jcommon-1.0.23.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/library/jfreechart-1.0.19.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/library/sqltool.jar"/>
+        </jar>
+    </target>
+</project>
